@@ -3,6 +3,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 .first-section {
@@ -10,44 +11,39 @@ html {
   margin-top: 5rem;
   text-align: center;
 }
-
-#sec1cont1 {
-  margin-bottom: 2rem;
+#cardimage {
+  transition: transform 0.4s;
 }
-
-#footer {
-  background-color: #1a324b;
-  color: white;
-  text-align: center;
-  height: 125px;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.carousel-item {
-  height: 32rem;
-  background: #777;
-  color: white;
-  position: relative;
-  background-position: center;
-  background-size: cover;
-}
-
-#containercc {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-bottom: 50px;
+#cardimage:hover {
+  transform: scale(1.2);
 }
 
 .bg {
-  height: 100%;
-  background-image: url(./umeed21a.jpeg);
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('./public/images/umeed21a.jpeg');
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.8;
+}
+
+nav.navbar {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: transparent !important;
+}
+nav.navbar.scrolled {
+  background: rgb(26, 13, 17) !important;
+}
+
+#ontext {
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  line-height: 100vh;
+  font-family: 'Estonia', cursive;
 }
 .featurette-divider {
   margin: 5rem 0;
@@ -66,8 +62,31 @@ html {
   margin-bottom: 5rem;
 }
 
+#footer {
+  background-color: #1a324b;
+  color: white;
+  text-align: center;
+  height: 125px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+#footer2 {
+  background-color: #082032;
+  height: 50px;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-family: 'Dancing Script', cursive;
+}
+
 @media (min-width: 40em) {
   .featurette-heading {
     font-size: 50px;
+  }
+}
+
+@media (max-width: 40em) {
+  #ontext {
+    font-size: 2rem;
   }
 }
